@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option java_package = "org.ctoader.medium";
+option java_outer_classname = "PlanetWrapper";
+
+message Planet {
+    int64 id = 1;
+    string name = 2;
+    int32 rotation_period = 3;
+    int32 orbital_period = 4;
+    int64 diameter = 5;
+    repeated string climate = 6;
+    repeated string gravity = 7;
+    repeated string terrain = 8;
+    int32 surface_water = 9;
+    int64 population = 10;
+}
+
+service PlanetService {
+    rpc findAll(google.protobuf.Empty) returns (stream Planet) {}
+}

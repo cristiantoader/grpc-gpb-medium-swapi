@@ -6,7 +6,53 @@
 
     <groupId>org.ctoader.medium</groupId>
     <artifactId>grpc-gpb-medium-swapi</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
+    <modules>
+        <module>grpc-gpb-model</module>
+        <module>grpc-gpb-api</module>
+        <module>grpc-gpb-client</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <protobuf-java.version>3.4.0</protobuf-java.version>
+        <grpc.version>1.26.0</grpc.version>
+        <os-maven-plugin.version>1.6.0</os-maven-plugin.version>
+        <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+        <protobuf-maven-plugin.version>0.6.1</protobuf-maven-plugin.version>
+        <javax.annotation-api.version>1.2</javax.annotation-api.version>
+        <lombok.version>1.18.10</lombok.version>
+        <netty.tcnative.version>2.0.25.Final</netty.tcnative.version>
+        <spring.boot.version>2.2.4.RELEASE</spring.boot.version>
+        <opencsv.version>4.1</opencsv.version>
+        <guava.version>21.0</guava.version>
+        <jool.version>0.9.12</jool.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
